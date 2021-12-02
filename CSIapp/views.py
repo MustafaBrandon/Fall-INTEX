@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from CSIapp.models import *
 
 
@@ -14,4 +13,9 @@ def perscriberdetailsPageView(request) :
     return render(request, 'CSIapp/perscriberdetails.html')
 
 def prescribersearchPageView(request):
-    return render(request, 'CSIapp/drugdetails.html')
+    prescriber_data = Prescriber.objects.all
+
+    context = {
+        "prescribers" : prescriber_data,
+    }
+    return render(request, 'CSIapp/drugdetails.html',context)
