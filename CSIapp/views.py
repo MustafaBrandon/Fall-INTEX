@@ -6,3 +6,6 @@ from CSIapp.models import *
 # Create your views here.
 def indexPageView(request) :
     return render(request, 'CSIapp/index.html')
+
+def drugdetailsPageView(request) :
+    return render(request, 'CSIapp/drugdetails.html')

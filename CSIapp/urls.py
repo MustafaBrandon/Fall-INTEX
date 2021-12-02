@@ -5,5 +5,6 @@ from .views import *
 urlpatterns = [
     #path("about/", aboutPageView, name="about"),
     path("",indexPageView,name="index"),
+    path("drugdetails/", drugdetailsPageView, name="drugdetails"),
 ]
 
