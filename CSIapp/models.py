@@ -4,6 +4,17 @@ from django.db import models
 class Drugs(models.Model):
     drugname = models.CharField(max_length=30)
     isopioid = models.CharField(max_length=5)
+    
+class Credentials(models.Model):
+    npi = models.IntegerField(default=0)
+    cred_pa = models.CharField(max_length=5)
+    cred_phd = models.CharField(max_length=5)
+    cred_md = models.CharField(max_length=5)
+    cred_dds = models.CharField(max_length=5)
+    cred_do = models.CharField(max_length=5)
+    cred_np = models.CharField(max_length=5)
+    cred_dpm = models.CharField(max_length=5)
+    cred_od = models.CharField(max_length=5)
 
 class Prescriber (models.Model):
     npi = models.IntegerField(default=0)

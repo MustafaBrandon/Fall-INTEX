@@ -12,3 +12,6 @@ def drugdetailsPageView(request) :
 
 def perscriberdetailsPageView(request) :
     return render(request, 'CSIapp/perscriberdetails.html')
+
+def prescribersearchPageView(request):
+    return render(request, 'CSIapp/drugdetails.html')
