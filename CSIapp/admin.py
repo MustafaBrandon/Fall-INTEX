@@ -3,5 +3,5 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Prescriber)
-admin.site.register(Credentials)
-admin.site.register(Drugs)
+admin.site.register(Credential)
+admin.site.register(Drug)
