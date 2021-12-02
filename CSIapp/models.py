@@ -1,11 +1,12 @@
 from django.db import models
 
 
-class Drugs(models.Model):
+
+class Drug(models.Model):
     drugname = models.CharField(max_length=30)
     isopioid = models.CharField(max_length=5)
     
-class Credentials(models.Model):
+class Credential(models.Model):
     npi = models.IntegerField(default=0)
     cred_pa = models.CharField(max_length=5)
     cred_phd = models.CharField(max_length=5)
