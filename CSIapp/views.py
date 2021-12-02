@@ -9,3 +9,6 @@ def indexPageView(request) :
 
 def drugdetailsPageView(request) :
     return render(request, 'CSIapp/drugdetails.html')
+
+def perscriberdetailsPageView(request) :
+    return render(request, 'CSIapp/perscriberdetails.html')
