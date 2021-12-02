@@ -266,3 +266,9 @@ class Prescriber (models.Model):
     ziprasidonehcl = models.IntegerField(default=0)
     zolpidemtartrate = models.IntegerField(default=0)
 
+    def __str__(self):
+        return (self.full_name)
+
+    @property
+    def full_name(self):
+        return '%s %s' % (self.fname, self.lname)   
