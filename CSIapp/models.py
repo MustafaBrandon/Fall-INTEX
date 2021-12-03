@@ -1,6 +1,6 @@
 from django.db import models
 
-class Drugs(models.Model):
+class Drug(models.Model):
     drugid = models.IntegerField(default=0)
     drugname = models.CharField(max_length=30)
     isopioid = models.CharField(max_length=5)
@@ -11,7 +11,7 @@ class Drugs(models.Model):
     def __str__(self):
         return (self.drugname)
 
-class Credentials(models.Model):
+class Credential(models.Model):
     npi = models.IntegerField(default=0)
     cred_pa = models.CharField(max_length=5)
     cred_phd = models.CharField(max_length=5)
@@ -27,7 +27,7 @@ class Credentials(models.Model):
 
     def __str__(self):
         return (self.npi)    
-class Prescriber (models.Model):
+class Prescriber(models.Model):
     npi = models.IntegerField(default=0)
     fname = models.CharField(max_length=11)
     lname = models.CharField(max_length=11)
