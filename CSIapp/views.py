@@ -10,8 +10,13 @@ def indexPageView(request) :
 def drugdetailsPageView(request) :
     return render(request, 'CSIapp/drugdetails.html')
 
-def perscriberdetailsPageView(request) :
-    return render(request, 'CSIapp/perscriberdetails.html')
+def prescriberdetailsPageView(request) :
+    return render(request, 'CSIapp/prescriberdetails.html')
 
 def prescribersearchPageView(request):
-    return render(request, 'CSIapp/drugdetails.html')
+    data = Prescriber.objects.all()
+
+    context = {
+        "our_prescriber" : data,
+    }
+    return render(request, 'CSIapp/drugdetails.html', context)
