@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import DO_NOTHING
 
 class Drug(models.Model):
     drugid = models.IntegerField(default=0)
@@ -11,22 +12,7 @@ class Drug(models.Model):
     def __str__(self):
         return (self.drugname)
 
-class Credential(models.Model):
-    npi = models.IntegerField(default=0)
-    cred_pa = models.CharField(max_length=5)
-    cred_phd = models.CharField(max_length=5)
-    cred_md = models.CharField(max_length=5)
-    cred_dds = models.CharField(max_length=5)
-    cred_do = models.CharField(max_length=5)
-    cred_np = models.CharField(max_length=5)
-    cred_dpm = models.CharField(max_length=5)
-    cred_od = models.CharField(max_length=5)
-
-    class Meta:
-        db_table = "pd_credentials"
-
-    def __str__(self):
-        return (self.npi)    
+    
 class Prescriber(models.Model):
     npi = models.IntegerField(default=0)
     fname = models.CharField(max_length=11)
@@ -296,4 +282,22 @@ class Prescriber(models.Model):
 
     @property
     def full_name(self):
-        return '%s %s' % (self.fname, self.lname)   
+        return '%s %s' % (self.fname, self.lname)  
+
+
+class Credential(models.Model):
+    npi = models.ForeignKey(Prescriber, on_delete=DO_NOTHING)(default=0)
+    cred_pa = models.CharField(max_length=5)
+    cred_phd = models.CharField(max_length=5)
+    cred_md = models.CharField(max_length=5)
+    cred_dds = models.CharField(max_length=5)
+    cred_do = models.CharField(max_length=5)
+    cred_np = models.CharField(max_length=5)
+    cred_dpm = models.CharField(max_length=5)
+    cred_od = models.CharField(max_length=5)
+
+    class Meta:
+        db_table = "pd_credentials"
+
+    def __str__(self):
+        return (self.npi) 
