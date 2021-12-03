@@ -1,11 +1,15 @@
 from django.db import models
 
 
-class Drugs(models.Model):
+
+class Drug(models.Model):
     drugname = models.CharField(max_length=30)
     isopioid = models.CharField(max_length=5)
+
+    class Meta:
+        db_table = "drugs"
     
-class Credentials(models.Model):
+class Credential(models.Model):
     npi = models.IntegerField(default=0)
     cred_pa = models.CharField(max_length=5)
     cred_phd = models.CharField(max_length=5)
@@ -16,6 +20,8 @@ class Credentials(models.Model):
     cred_dpm = models.CharField(max_length=5)
     cred_od = models.CharField(max_length=5)
 
+    class Meta:
+        db_table = "credentials"
 class Prescriber (models.Model):
     npi = models.IntegerField(default=0)
     fname = models.CharField(max_length=11)
@@ -276,6 +282,9 @@ class Prescriber (models.Model):
     zetia = models.IntegerField(default=0)
     ziprasidonehcl = models.IntegerField(default=0)
     zolpidemtartrate = models.IntegerField(default=0)
+
+    class Meta:
+        db_table = "prescriber"
 
     def __str__(self):
         return (self.full_name)
