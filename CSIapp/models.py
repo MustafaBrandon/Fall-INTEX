@@ -7,7 +7,10 @@ class Drug(models.Model):
     isopioid = models.CharField(max_length=5)
 
     class Meta:
-        db_table = "drugs"
+        db_table = "pd_drugs"
+    
+    def __str__(self):
+        return (self.drugname)
     
 class Credential(models.Model):
     npi = models.IntegerField(default=0)
@@ -21,7 +24,10 @@ class Credential(models.Model):
     cred_od = models.CharField(max_length=5)
 
     class Meta:
-        db_table = "credentials"
+        db_table = "pd_credentials"
+
+    def __str__(self):
+        return (self.npi)    
 class Prescriber (models.Model):
     npi = models.IntegerField(default=0)
     fname = models.CharField(max_length=11)
@@ -284,7 +290,7 @@ class Prescriber (models.Model):
     zolpidemtartrate = models.IntegerField(default=0)
 
     class Meta:
-        db_table = "prescriber"
+        db_table = "pd_prescriber"
 
     def __str__(self):
         return (self.full_name)
