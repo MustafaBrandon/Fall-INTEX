@@ -1,6 +1,7 @@
 from django.db import models
 
 
+<<<<<<< Updated upstream
 
 class Drug(models.Model):
     drugname = models.CharField(max_length=30)
@@ -13,6 +14,14 @@ class Drug(models.Model):
         return (self.drugname)
     
 class Credential(models.Model):
+=======
+class Drugs(models.Model):
+    drugid = models.IntegerField(default=0)
+    drugname = models.CharField(max_length=30)
+    isopioid = models.CharField(max_length=5)
+
+class Credentials(models.Model):
+>>>>>>> Stashed changes
     npi = models.IntegerField(default=0)
     cred_pa = models.CharField(max_length=5)
     cred_phd = models.CharField(max_length=5)
