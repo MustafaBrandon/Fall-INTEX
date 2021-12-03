@@ -286,13 +286,13 @@ class Prescriber(models.Model):
 
 
 class Credential(models.Model):
-    npi = models.ForeignKey(Prescriber, on_delete=DO_NOTHING)(default=0)
+    npi = models.ForeignKey(Prescriber, on_delete=DO_NOTHING)
     cred_pa = models.CharField(max_length=5)
     cred_phd = models.CharField(max_length=5)
     cred_md = models.CharField(max_length=5)
     cred_dds = models.CharField(max_length=5)
     cred_do = models.CharField(max_length=5)
-    cred_np = models.CharField(max_length=5)
+    cred_np = models.CharField(max_length=5)    
     cred_dpm = models.CharField(max_length=5)
     cred_od = models.CharField(max_length=5)
 
