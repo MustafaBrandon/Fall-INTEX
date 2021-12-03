@@ -7,7 +7,7 @@ urlpatterns = [
     #path("about/", aboutPageView, name="about"),
     path("",indexPageView,name="index"),
     path("drugdetails/", drugdetailsPageView, name="drugdetails"),
-    path('perscriberdetails/', perscriberdetailsPageView, name="perscriberdetails"),
+    path('prescriberdetails/', prescriberdetailsPageView, name="prescriberdetails"),
     path("searchprescriber/", prescribersearchPageView, name="prescribersearch"), 
 ]
 

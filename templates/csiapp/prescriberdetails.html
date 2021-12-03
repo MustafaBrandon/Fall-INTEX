@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load  static  %}
+
+{% block content %}
+<h1> {{prescriber.full_name}} </h1>
+<br>
+<br>
+<p> Credentials: {{prescriber.credentials }} <br>
+    Speciality: {{prescriber.speciality}} <br>
+    State: {{prescriber.state}} <br>
+    Sex: {{prescriber.gender}} <br>
+    Sells Opioids: {{prescriber.isopioidprescriber}} <br>
+    Total Opioids Sold: {{prescriber.opioidssold}} <br>
+    Total Drugs Sold: {{prescriber.totalprescriptions}} <br>
+</p>
+<br><br>
+
+
+
+{% endblock  %}
